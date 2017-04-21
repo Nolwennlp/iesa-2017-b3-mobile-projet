@@ -1,0 +1,3 @@
+- Badge de position en fonction de ton classement dans l’association
+- Badge en fonction des défis réaliser et terminer 
+- Badge en fonction du niveau du joueur (profil personnel) 
