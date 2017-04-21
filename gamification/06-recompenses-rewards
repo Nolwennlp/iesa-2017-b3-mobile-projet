@@ -1,0 +1,2 @@
+- Une fois atteint un niveau il peut gagner des bons ( questions à poser ? ) 
+- Badges en fonction des combos / de la vitesse de réponse / de nombre d’essai 
