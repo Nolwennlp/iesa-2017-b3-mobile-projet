@@ -20,8 +20,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-  });
+  })
 })
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -29,7 +30,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-  $stateProvider
+  $stateProvider.state('home',{
+          url:'/home',
+          templateUrl:'templates/home.html',
+          controller:'HomeCtrl'
+  })
+
+      .state('contact',{
+        url:'/contact',
+          templateUrl:'templates/contact.html',
+          controller:'ContactCtrl'
+        
+      })
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -80,6 +92,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  // $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('/home');
 
 });

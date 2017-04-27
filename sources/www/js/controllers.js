@@ -17,6 +17,30 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('HomeCtrl',function ($scope,$ionicLoading,$state) {
+    $scope.search = function(){
+        $ionicLoading.show({
+            template:"Please wait...",
+            duration: 1000
+        }).then(function(){
+            console.log("The loading indicator is now displayed");
+        });
+        $state.go('contact');
+    }
+})
+
+.controller('ContactCtrl',function($scope, $cordovaContacts){
+    $scope.getContactList = function() {
+        $cordovaContacts.find({filter: ''}).then(function(result) {
+            $scope.contacts = result;
+            console.log("huhuhu");
+        }, function(error) {
+            console.log("ERROR: " + error);
+        });
+    }
+})
+
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
