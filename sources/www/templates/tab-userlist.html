@@ -1,0 +1,15 @@
+<ion-view view-title="UserList">
+    <ion-content class="padding">
+
+        <ul class="list">
+        <div ng-repeat="n in userlist track by $index">
+            <li class="item">
+                {{n}}
+            </li>
+        </div>
+        </ul>
+
+        <a class="button icon icon-right ion-chevron-right" href="#/tab/dash">Dashboard</a>
+    </ion-content>
+
+</ion-view>
