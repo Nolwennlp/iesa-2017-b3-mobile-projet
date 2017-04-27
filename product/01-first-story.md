@@ -7,11 +7,13 @@
 - AS A: joueur
 - I WANT: Inviter des gens au jeu
 - SO THAT: Je peux joueur avec mes amis
+- On suggère d'afficher la liste des amis dans le profil du joueur.
 
 ## Camera
 - AS A: joueur
 - I WANT: prendre une photo
 - SO THAT: Je peux personnalisé mon avatar
+- Est-ce qu'on peut permettre aux gens de proposer leurs propres images à découvrir ? 
 
 ## Geoloc’
 - AS A: joueur
