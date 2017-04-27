@@ -6,6 +6,9 @@
 - Nicola Bonaccorso
 - Nicolas Serain
 
+## PITCH DE L'APPLICATION
+Notre application permet aux utilisateurs de jouer pour soutenir des associations. 
+Nous reprenons les principes du jeux SCHMILBLICK. Plus le joueur gagne de partie, découvre le plus d'images, plus les associations gagnent en notoriété et gagnent des dons. 
 
 ## Lien Video
 
