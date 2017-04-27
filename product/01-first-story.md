@@ -1,4 +1,4 @@
-## Splashscreen:
+## Splashscreen
 - AS A : developpeur
 - I WANT: Un splashscreen personnalisé pour le jeu
 - SO THAT: le lancement du jeu est indiqué
