@@ -15,6 +15,17 @@ angular.module('starter.controllers', [])
                 $scope.contacts = allContacts;
             }
         );
+
+
+        var options = {
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                intent: 'INTENT'  // send SMS with the default SMS app
+                //intent: ''        // send SMS without open any other app
+            }
+        }
+
+
         $scope.sms = {
             number: '',
             message: 'Rejoins moi sur le Schmilbrick'
