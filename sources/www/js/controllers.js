@@ -15,34 +15,29 @@ angular.module('starter.controllers', [])
                 $scope.contacts = allContacts;
             }
         );
+        $scope.sendsms=function()
 
+        {
+            document.addEventListener("deviceready", function () {
+                var options = {
+                    replaceLineBreaks: false, // true to replace \n by a new line, false by default
+                    android: {
+                        //intent: 'INTENT' // send SMS with the native android SMS messaging
+                        intent: '' // send SMS without open any other app
+                    }
+                };
 
-        var options = {
-            replaceLineBreaks: false, // true to replace \n by a new line, false by default
-            android: {
-                intent: 'INTENT'  // send SMS with the default SMS app
-                //intent: ''        // send SMS without open any other app
-            }
+                $cordovaSms
+                    .send('0677293397', 'SMS content', options)
+                    .then(function() {
+                        alert("sent");
+                    }, function(error) {
+                        alert("can't sent");
+                    });
+            });
+
         }
 
-
-        $scope.sms = {
-            number: '',
-            message: 'Rejoins moi sur le Schmilbrick'
-        };
-        document.addEventListener("deviceready", function() {
-            $scope.sendSMS = function () {
-                alert(sms.number);
-                alert(sms.message);
-                $cordovaSms
-                    .send('0677293397', 'sms.message', options)
-                    .then(function () {
-                        alert('Success');
-                    }, function (error) {
-                        alert('Error');
-                    });
-            }
-        });
     })
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
