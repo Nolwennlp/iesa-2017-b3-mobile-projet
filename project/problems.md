@@ -7,3 +7,5 @@
   
 ## Problèmes du jour 2:
 - Refresh de l'application ne fonctionne pas bien. Obliger de revenir sur la home et revenir sur l'application pour que le refresh se fasse. 
+
+- Simulateur ne fonctionne pas bien pour Ios. On ne voyait pas les modifications, il a fallu que l'on test sur téléphone.
