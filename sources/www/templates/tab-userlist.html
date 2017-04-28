@@ -2,10 +2,12 @@
     <ion-content class="padding">
 
         <ul class="list">
-        <div ng-repeat="n in userlist track by $index">
+        <div ng-controller="ContactCtrl">
+        <div  ng-repeat="n in contacts track by $index">
             <li class="item">
                 {{n}}
             </li>
+        </div>
         </div>
         </ul>
 
