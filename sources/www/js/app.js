@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,20 +30,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-  $stateProvider.state('home',{
-          url:'/home',
-          templateUrl:'templates/home.html',
-          controller:'HomeCtrl'
-  })
-
-      .state('contact',{
-        url:'/contact',
-          templateUrl:'templates/contact.html',
-          controller:'ContactCtrl'
-        
+  $stateProvider
+  // setup an abstract state for the tabs directive
+      .state('tab.invite',{
+        url:'/invite',
+          views:{
+            'tab-invite':{
+                templateUrl:'templates/invite.html',
+                controller:'InviteCtrl'
+            }
+          }
       })
 
-  // setup an abstract state for the tabs directive
+      .state('tab.propose',{
+        url:'/propose',
+          views:{
+            'tab-propose':{
+                templateUrl:'templates/propose.html',
+                // controller:'ProposeCtrl'
+            }
+          }
+      })
+
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -92,7 +100,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  // $urlRouterProvider.otherwise('/tab/dash');
-    $urlRouterProvider.otherwise('/home');
-
+  $urlRouterProvider.otherwise('/tab/dash');
 });
