@@ -1,7 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup) {
+        $scope.invitePeople=function(){
+            $ionicPopup.alert({
+                title: 'Contact',
+                template: 'Select someone to share the game with'
+            });
+        }
+    })
 
+    .controller('InviteCtrl',function ($scope, $cordovaContacts) {
+        $cordovaContacts.find({multiple:true}).then(function(allContacts) {
+                $scope.consoleContacts = JSON.stringify(allContacts);
+                $scope.contacts = allContacts;
+            }
+        );
+    })
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
