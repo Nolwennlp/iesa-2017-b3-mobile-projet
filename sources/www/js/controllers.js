@@ -9,12 +9,29 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('InviteCtrl',function ($scope, $cordovaContacts) {
+    .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms) {
         $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                 $scope.consoleContacts = JSON.stringify(allContacts);
                 $scope.contacts = allContacts;
             }
         );
+        $scope.sms = {
+            number: '',
+            message: 'Rejoins moi sur le Schmilbrick'
+        };
+        document.addEventListener("deviceready", function() {
+            $scope.sendSMS = function () {
+                alert(sms.number);
+                alert(sms.message);
+                $cordovaSms
+                    .send('0677293397', 'sms.message', options)
+                    .then(function () {
+                        alert('Success');
+                    }, function (error) {
+                        alert('Error');
+                    });
+            }
+        });
     })
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
