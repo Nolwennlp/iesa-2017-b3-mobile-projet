@@ -9,36 +9,53 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms) {
-        $cordovaContacts.find({multiple:true}).then(function(allContacts) {
-                $scope.consoleContacts = JSON.stringify(allContacts);
-                $scope.contacts = allContacts;
+    .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup) {
+        // $cordovaContacts.find({multiple:true}).then(function(allContacts) {
+        //         $scope.consoleContacts = JSON.stringify(allContacts);
+        //         $scope.contacts = allContacts;
+        //     }
+        // );
+        var options = {
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                // intent: '' // send SMS with the native android SMS messaging
+                // intent: '' // send SMS without open any other app
+                intent: 'INTENT' // send SMS inside a default SMS app
             }
-        );
-        $scope.sendsms=function()
+        };
 
-        {
-            document.addEventListener("deviceready", function () {
-                var options = {
-                    replaceLineBreaks: false, // true to replace \n by a new line, false by default
-                    android: {
-                        //intent: 'INTENT' // send SMS with the native android SMS messaging
-                        intent: '' // send SMS without open any other app
-                    }
-                };
-
-                $cordovaSms
-                    .send('0677293397', 'SMS content', options)
-                    .then(function() {
-                        alert("sent");
-                    }, function(error) {
-                        alert("can't sent");
-                    });
+        $scope.sendsms = function(){
+            var promptPopup = $ionicPopup.prompt({
+                title: 'Votre message',
+                template: 'Ecrivez un message',
+                inputType: 'text'
             });
 
-        }
+            promptPopup.then(function(res) {
+                console.log(res);
+            }).then(function (res) {
+                $cordovaSms.send('0677293397',res).then(function(){
+                    console.log('bien vu');
+                })
+            })
 
+            // $cordovaSms.send('0677293397', 'Hello', options)
+            //     .then(function() {
+            //         // Success! SMS was sent
+            //         $ionicPopup.alert({
+            //             title:'succes',
+            //             template:'succes'
+            //         });
+            //     }, function(error) {
+            //         // An error occurred
+            //         $ionicPopup.alert({
+            //             title:'Fail',
+            //             template:'Fail'
+            //         });
+            //     });
+        }
     })
+
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.

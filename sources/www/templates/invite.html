@@ -5,9 +5,23 @@
             <!--<ion-item ng-repeat="one in contacts" type="item-text-wrap">-->
             <!---->
             <!--</ion-item>-->
-            <ion-item ng-repeat="one in contacts">
-                <h2>{{one.name.formatted}}</h2>
-                <a class="button button-icon ion-ios-paperplane" ng-click="sendsms()"></a>
+            <!--<ion-item ng-repeat="one in contacts">-->
+                <!--<h2>{{one.name.formatted}}</h2>-->
+                <!--<a class="button button-icon ion-ios-paperplane-right" ng-click="sendsms()"></a>-->
+
+                <!--<div class="item item-button-right">-->
+                    <!--<h2>{{one.name.formatted}}</h2>-->
+                    <!--<button class="button button-positive" ng-click="sendsms()">-->
+                        <!--<i class="icon ion-android-textsms"></i>-->
+                    <!--</button>-->
+                <!--</div>-->
+            <ion-list>
+                <div class="item item-button-right">
+                    Yun
+                    <button class="button button-positive" ng-click="sendsms()">
+                        <i class="icon ion-arrow-right-a"></i>
+                    </button>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
