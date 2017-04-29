@@ -9,12 +9,19 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup) {
+    .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar) {
         // $cordovaContacts.find({multiple:true}).then(function(allContacts) {
         //         $scope.consoleContacts = JSON.stringify(allContacts);
         //         $scope.contacts = allContacts;
         //     }
         // );
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            console.log(StatusBar);
+            StatusBar.hide();
+        }
+
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default
             android: {
