@@ -1,0 +1,4 @@
+- Première fois que le joueur se connecte on propose au joueur de compléter son profil une fois cela fait il peut commencer à jouer.<br/>
+- Lors de la première partie une rapide explication des règles lui sera proposée.<br/>
+- A chaque début de partie où les règles changes par exemple selon le mode de jeux sélectionné on accompagne le joueur et on lui explique comment procéder pour les futurs niveaux du même type<br/>
+- Sur les écrans de chargement on proposera aux joueurs des astuces aléatoires pour le garder dans un apprentissage constant
