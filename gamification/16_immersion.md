@@ -1,0 +1,3 @@
+- La status bar sera cachée pendant le que le joueur fait des parties et complète des schmilblick en mode paysage et portrait, elle n'apparaît que lorsque l’on accède à son profil.<br/><br/>
+- Le niveau de la batterie seul sera affiché pour que le téléphone ne coupe pas en plein milieu d’une partie multijoueur par exemple.<br/><br/>
+- Le design sera épuré pour éviter de surcharger le joueur d’information. Les couleurs seront attractives mais pas agressifs ( on évite les couleurs flashs et on mise plus sur des couleurs flats).
