@@ -1,0 +1,3 @@
+- Possibilité de demander de l’aide à des “mentors” qui ont atteint le niveau maximum du jeux et sont donc plus expérimenté qu’un débutant une fois par jour sur un niveau bloquant par exemple.<br/><br/>
+- Certaines parties spéciales permettent à tous les joueurs inscrits de participer, sous forme de tournoi.<br/><br/>
+- Un joueur ayant commencé une partie classique peut revenir sur la partie en cours même si il quitte l’application.
