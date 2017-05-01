@@ -9,6 +9,52 @@ angular.module('starter.controllers', [])
         }
     })
 
+    .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
+        $ionicPopup.alert({
+            title:'test',
+            template:'debut'
+        });
+        var posOptions = {timeout: 10000, enableHighAccuracy: false};
+        $cordovaGeolocation
+            .getCurrentPosition(posOptions)
+            .then(function (position) {
+                var lat  = position.coords.latitude;
+                var long = position.coords.longitude;
+                console.log('latitude : '+lat);
+                console.log('Longitude : '+long);
+                console.log(position);
+
+                $ionicPlatform.ready(function() {
+                    var myLatlng = new google.maps.LatLng(lat,long);
+
+                    var mapOptions = {
+                        center: myLatlng,
+                        zoom: 16,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                    $scope.map = map;
+
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        title:"Hello World!"
+                    });
+                    marker.setMap(map);
+
+                    $ionicPopup.alert({
+                        title:'fin',
+                        template:'fini'
+                    });
+                });
+
+
+            }, function(err) {
+                // error
+                console.log(err);
+            });
+    })
+
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar) {
         // $cordovaContacts.find({multiple:true}).then(function(allContacts) {
         //         $scope.consoleContacts = JSON.stringify(allContacts);
