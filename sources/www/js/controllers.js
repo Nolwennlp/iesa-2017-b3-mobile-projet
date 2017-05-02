@@ -61,30 +61,39 @@ angular.module('starter.controllers', [])
     })
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
-        // $cordovaContacts.find({multiple:true}).then(function(allContacts) {
-        //         $scope.consoleContacts = JSON.stringify(allContacts);
-        //         $scope.contacts = allContacts;
-        //     }
-        // );
+
         $ionicPlatform.ready(function () {
             // StatusBar.hide();
-            var options = {
-                replaceLineBreaks: false,
-                android:{
-                    intent : ''
-                }
-            };
-            $scope.sendsms = function(){
-                alert("sms");
-                $cordovaSms.send("0677293397","test test test", options).then(function(){
-                    alert("success! sms was sent");
-                },function(error){
-                    console.log(error);
-                    alert('Error sending sms!');
-                    console.log(error);
 
-                });
-            };
+            $cordovaContacts.find({multiple:true}).then(function(allContacts) {
+                    $scope.consoleContacts = JSON.stringify(allContacts);
+                    $scope.contacts = allContacts;
+                }
+            );
+
+            $scope.sensTextMsg = function (name, phoneNumber) {
+
+                alert(name + ' : '+ phoneNumber);
+
+                var options = {
+                    replaceLineBreaks: false, // true to replace \n by a new line, false by default
+                    android: {
+                        intent: '' // send SMS with the native android SMS messaging
+                        //intent: '' // send SMS without open any other app
+                        //intent: 'INTENT' // send SMS inside a default SMS app
+                    }
+                };
+
+                var content = 'Salut '+name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
+                $cordovaSms
+                    .send(phoneNumber, content, options)
+                    .then(function () {
+                        alert('Votre message a été envoyé!');
+
+                    }, function(error){
+                        alert(error);
+                    });
+            }
         });
     })
 
