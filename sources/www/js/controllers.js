@@ -10,52 +10,54 @@ angular.module('starter.controllers', [])
     })
 
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
-        $ionicPopup.alert({
-            title:'test',
-            template:'debut'
-        });
-        var posOptions = {timeout: 10000, enableHighAccuracy: false};
-        $cordovaGeolocation
-            .getCurrentPosition(posOptions)
-            .then(function (position) {
-                var lat  = position.coords.latitude;
-                var long = position.coords.longitude;
-                console.log('latitude : '+lat);
-                console.log('Longitude : '+long);
-                console.log(position);
-
-                $ionicPlatform.ready(function() {
-                    var myLatlng = new google.maps.LatLng(lat,long);
-
-                    var mapOptions = {
-                        center: myLatlng,
-                        zoom: 16,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
-
-                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                    $scope.map = map;
-
-                    var marker = new google.maps.Marker({
-                        position: myLatlng,
-                        title:"Hello World!"
-                    });
-                    marker.setMap(map);
-
-                    $ionicPopup.alert({
-                        title:'fin',
-                        template:'fini'
-                    });
-                });
-
-
-            }, function(err) {
-                $ionicPopup.alert({
-                    title:'erreur',
-                    template: err
-                });
-                console.log(err);
+        $ionicPlatform.ready(function () {
+            $ionicPopup.alert({
+                title:'test',
+                template:'debut'
             });
+            var posOptions = {timeout: 10000, enableHighAccuracy: false};
+            $cordovaGeolocation
+                .getCurrentPosition(posOptions)
+                .then(function (position) {
+                    var lat  = position.coords.latitude;
+                    var long = position.coords.longitude;
+                    console.log('latitude : '+lat);
+                    console.log('Longitude : '+long);
+                    console.log(position);
+
+                    $ionicPlatform.ready(function() {
+                        var myLatlng = new google.maps.LatLng(lat,long);
+
+                        var mapOptions = {
+                            center: myLatlng,
+                            zoom: 16,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        $scope.map = map;
+
+                        var marker = new google.maps.Marker({
+                            position: myLatlng,
+                            title:"Hello World!"
+                        });
+                        marker.setMap(map);
+
+                        $ionicPopup.alert({
+                            title:'fin',
+                            template:'fini'
+                        });
+                    });
+
+
+                }, function(err) {
+                    $ionicPopup.alert({
+                        title:'erreur',
+                        template: err
+                    });
+                    console.log(err);
+                });
+        })
     })
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
@@ -64,24 +66,18 @@ angular.module('starter.controllers', [])
         //         $scope.contacts = allContacts;
         //     }
         // );
+        $ionicPlatform.ready(function () {
+            // StatusBar.hide();
 
-        document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-            console.log(StatusBar);
-            StatusBar.hide();
-        }
-
-        $scope.sendsms = function(){
-            $ionicPlatform.ready(function () {
-
+            $scope.sendsms = function(){
+                alert("sms");
                 var options = {
                     replaceLineBreaks: false,
                     android:{
-                        intent : 'INTENT',
-                        // intent : ''
+                        intent : 'INTENT'
                     }
                 };
-                $cordovaSms.send('0677293397','This is a test sms', options).then(function(){
+                $cordovaSms.send("0677293397","test test test", options).then(function(){
                     alert("success! sms was sent");
                 },function(error){
                     console.log(error);
@@ -89,8 +85,8 @@ angular.module('starter.controllers', [])
                     console.log(error);
 
                 });
-            })
-        };
+            };
+        });
     })
 
 .controller('ChatsCtrl', function($scope, Chats) {
