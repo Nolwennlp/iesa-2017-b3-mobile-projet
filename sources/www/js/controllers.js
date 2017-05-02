@@ -53,7 +53,7 @@ angular.module('starter.controllers', [])
                 }, function(err) {
                     $ionicPopup.alert({
                         title:'erreur',
-                        template: err
+                        template: JSON.stringify(err)
                     });
                     console.log(err);
                 });
@@ -68,15 +68,14 @@ angular.module('starter.controllers', [])
         // );
         $ionicPlatform.ready(function () {
             // StatusBar.hide();
-
+            var options = {
+                replaceLineBreaks: false,
+                android:{
+                    intent : ''
+                }
+            };
             $scope.sendsms = function(){
                 alert("sms");
-                var options = {
-                    replaceLineBreaks: false,
-                    android:{
-                        intent : 'INTENT'
-                    }
-                };
                 $cordovaSms.send("0677293397","test test test", options).then(function(){
                     alert("success! sms was sent");
                 },function(error){
