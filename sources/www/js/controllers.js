@@ -71,9 +71,9 @@ angular.module('starter.controllers', [])
                 }
             );
 
-            $scope.sensTextMsg = function (name, phoneNumber) {
+            $scope.sensTextMsg = function ($name, $phoneNumber) {
 
-                alert(name + ' : '+ phoneNumber);
+                alert($name + ' : '+ $phoneNumber);
 
                 var options = {
                     replaceLineBreaks: false, // true to replace \n by a new line, false by default
@@ -84,14 +84,15 @@ angular.module('starter.controllers', [])
                     }
                 };
 
-                var content = 'Salut '+name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
-                $cordovaSms
-                    .send(phoneNumber, content, options)
-                    .then(function () {
+                $content = 'Salut '+$name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
+
+                alert("voici le contenu: "+$content);
+
+                $cordovaSms.sendSMS($phoneNumber, $content, options).then(function () {
                         alert('Votre message a été envoyé!');
 
                     }, function(error){
-                        alert(error);
+                        alert('erreur');
                     });
             }
         });
