@@ -151,11 +151,9 @@ angular.module('starter.controllers', [])
                 alert(name + ' : '+ phoneNumber);
 
                 var options = {
-                    replaceLineBreaks: false, // true to replace \n by a new line, false by default
+                    replaceLineBreaks: false,
                     android: {
-                        intent: '' // send SMS with the native android SMS messaging
-                        //intent: '' // send SMS without open any other app
-                        //intent: 'INTENT' // send SMS inside a default SMS app
+                        intent: ''
                     }
                 };
 
@@ -163,7 +161,7 @@ angular.module('starter.controllers', [])
 
                 alert("voici le contenu: "+content);
 
-                sms.send(phoneNumber, content, options).then(function () {
+                $cordovaSms.send(phoneNumber, content, options).then(function () {
                     alert('Votre message a été envoyé!');
                 }, function(error){
                     alert(error);
