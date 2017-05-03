@@ -35,8 +35,10 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDsN3wk9QDiSSdJXb4E0Fbt5ZZBMJre6OQ"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv9Ja8RxcuUXFqoGoDZfmn5iWSRkxhFto"type="text/javascript"></script>-->
     <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr7yG8aijXmFnFXoRfDLekHzwXUwdSmXw"type="text/javascript"></script>-->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaGAmUXYJUaoJEjqpEkv0TGdpje_usoXI"type="text/javascript"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaGAmUXYJUaoJEjqpEkv0TGdpje_usoXI"type="text/javascript"></script>-->
   <body ng-app="starter">
     <!--
       The nav bar that will be updated as we navigate between views.
@@ -50,6 +52,13 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Maps</h1>
+      </ion-header-bar>
+      <ion-nav-view></ion-nav-view>
+    </ion-pane>
     <ion-nav-bar class="bar-positive">
       <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
