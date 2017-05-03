@@ -88,11 +88,11 @@ angular.module('starter.controllers', [])
 
                 alert("voici le contenu: "+$content);
 
-                $cordovaSms.sendSMS($phoneNumber, $content, options).then(function () {
+                sms.send($phoneNumber, $content, options).then(function () {
                         alert('Votre message a été envoyé!');
 
                     }, function(error){
-                        alert('erreur');
+                        alert(error);
                     });
             }
         });
