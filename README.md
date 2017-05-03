@@ -83,3 +83,7 @@ cordova plugin add cordova-plugin-statusbar
 - 3.6-Device Orientation
 
 cordova plugin add cordova-plugin-device-orientation
+
+- 3.7-Sms
+
+cordova plugin add cordova-sms-plugin
