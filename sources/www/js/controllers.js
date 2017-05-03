@@ -45,38 +45,40 @@ angular.module('starter.controllers', [])
     })
 
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
-$scope.$on('$ionicView.enter', function() {
+        $scope.$on('$ionicView.enter', function() {
                 var isAndroid = ionic.Platform.isAndroid();
-                    if (isAndroid) {
+                if (isAndroid) {
                     $scope.getCallPermission();
+                    $ionicPopup.alert({
+                        title:'testPerm',
+                        template:'android'
+                    });
+
+                }
+                else
+                {
+                    $ionicPopup.alert({
+                        title:'testPermi',
+                        template:'not android'
+                    });
+                }
+        });
+
+        $scope.centerOnMe = function () {
+            $ionicPlatform.ready(function () {
                 $ionicPopup.alert({
-                                title:'testPerm',
-                                template:'android'
-                            });
-
-                     }else{
-                      $ionicPopup.alert({
-                                      title:'testPermi',
-                                      template:'not android'
-                                  }); ;
-                     }
+                    title:'test',
+                    template:'debut'
                 });
-        $ionicPlatform.ready(function () {
-
-            $ionicPopup.alert({
-                title:'test',
-                template:'debut'
-            });
-            var posOptions = {timeout: 10000, enableHighAccuracy: true};
-            $cordovaGeolocation
-                .getCurrentPosition(posOptions)
-                .then(function (position) {
-                    var lat  = position.coords.latitude;
-                    var long = position.coords.longitude;
-                    console.log('latitude : '+lat);
-                    console.log('Longitude : '+long);
-                    console.log(position);
-
+                var posOptions = {timeout: 10000, enableHighAccuracy: true};
+                $cordovaGeolocation
+                    .getCurrentPosition(posOptions)
+                    .then(function (position) {
+                        var lat  = position.coords.latitude;
+                        var long = position.coords.longitude;
+                        console.log('latitude : '+lat);
+                        console.log('Longitude : '+long);
+                        console.log(position);
                         var myLatlng = new google.maps.LatLng(lat,long);
 
                         var mapOptions = {
@@ -88,17 +90,17 @@ $scope.$on('$ionicView.enter', function() {
                         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
                         $scope.map = map;
                         google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-                          var marker = new google.maps.Marker({
-                              position: myLatlng,
-                              title:"Hello World!",
-                              map: $scope.map
-                          });
-                          var infoWindow = new google.maps.InfoWindow({
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                title:"Hello World!",
+                                map: $scope.map
+                            });
+                            var infoWindow = new google.maps.InfoWindow({
                                 content: "Here I am!"
                             });
                             google.maps.event.addListener(marker, 'click', function () {
-                                  infoWindow.open($scope.map, marker);
-                              });
+                                infoWindow.open($scope.map, marker);
+                            });
                         });
 //                        marker.setMap(map);
 
@@ -107,40 +109,36 @@ $scope.$on('$ionicView.enter', function() {
                             template:'fini'
                         });
 
-
-
-                }, function(err) {
-                    $ionicPopup.alert({
-                        title:'erreur',
-                        template: JSON.stringify(err)
+                    }, function(err) {
+                        $ionicPopup.alert({
+                            title:'erreur',
+                            template: JSON.stringify(err)
+                        });
+                        console.log(err);
                     });
-                    console.log(err);
-                });
-        })
+            })
+        }
     })
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
-
-
-
-                var isAndroid = ionic.Platform.isAndroid();
-                    if (isAndroid) {
+        var isAndroid = ionic.Platform.isAndroid();
+            if (isAndroid) {
                 $ionicPopup.alert({
-                                title:'testPerm',
-                                template:'android'
-                            });
-                                            $scope.getCallPermission();
-                     }else{
-                      $ionicPopup.alert({
-                                      title:'testPermi',
-                                      template:'not android'
-                                  }); ;
-                     }
-
+                        title:'testPerm',
+                        template:'android'
+                });
+                $scope.getCallPermission();
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title:'testPermi',
+                    template:'not android'
+                });
+            }
 
         $ionicPlatform.ready(function () {
-            // StatusBar.hide();
-
+            StatusBar.hide();
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                     $scope.consoleContacts = JSON.stringify(allContacts);
@@ -148,9 +146,9 @@ $scope.$on('$ionicView.enter', function() {
                 }
             );
 
-            $scope.sensTextMsg = function ($name, $phoneNumber) {
+            $scope.sendTextMsg = function (name, phoneNumber) {
 
-                alert($name + ' : '+ $phoneNumber);
+                alert(name + ' : '+ phoneNumber);
 
                 var options = {
                     replaceLineBreaks: false, // true to replace \n by a new line, false by default
@@ -161,16 +159,15 @@ $scope.$on('$ionicView.enter', function() {
                     }
                 };
 
-                $content = 'Salut '+$name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
+                var content = 'Salut '+name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
 
-                alert("voici le contenu: "+$content);
+                alert("voici le contenu: "+content);
 
-                sms.send($phoneNumber, $content, options).then(function () {
-                        alert('Votre message a été envoyé!');
-
-                    }, function(error){
-                        alert(error);
-                    });
+                sms.send(phoneNumber, content, options).then(function () {
+                    alert('Votre message a été envoyé!');
+                }, function(error){
+                    alert(error);
+                });
             }
         });
     })

@@ -5,7 +5,7 @@
             <ion-item ng-repeat="one in contacts" class="item-button-right">
                 <h2>{{one.name.formatted}}</h2>
                 <p> {{one.phoneNumbers[0].value}}</p>
-                <button class="button button-positive" ng-click="sensTextMsg(one.name.formatted,one.phoneNumbers[0].value)">
+                <button class="button button-positive" ng-click="sendTextMsg(one.name.formatted,one.phoneNumbers[0].value)">
                     <i class="icon ion-arrow-right-a"></i>
                 </button>
             </ion-item>
