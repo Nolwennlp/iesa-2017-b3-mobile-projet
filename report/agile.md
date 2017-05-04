@@ -18,6 +18,8 @@
 >>### Nicola : 
 >>Gâce à la méthode agile le travail en équipe est optimiser. Chaque jour un bilan est fait pour savoir ou chaque membre du groupe en est et quels ont été les problèmes rencontrés. Cela permet d'avancer et de juger si l'on abandonne une tâche pour la remplacer ou vérifier qu'il n'y a pas d'autre tâche que l'on peut effectuer lorsque l'on est bloquer par exemple. C'est une méthode d'organisation très intéressante dès lors que l'on trvail en équipe, cela facilite la communication dans l'équipe avec les points dans la journée.
 
+>>### Nicolas :
+>>La méthode agile permet d'avancer  et de s'orienter efficacement durant la vie du projet. Elle coordonne l'équipe, pointe les problèmes quand ils arrivent, et permet d'y remédier rapidement. L'agilité permet aussi un meilleur suivi, que ce soit du client ou de l'équipe de développement.
 
 ## Et si nous prenions un exemple concret ? 
 
