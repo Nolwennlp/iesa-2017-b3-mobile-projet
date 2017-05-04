@@ -8,3 +8,6 @@
 >### Nolwenn : 
 >La prise en main de Cordova est facile même pour un débutant car la documentation est assez claire et complète. 
 Si on veut créer une première application mobile c'est pratique.
+
+>### Nicolas :
+>Cordova est un outil complet et très pratique pour le développement mobile. Developper un code destiné à deux plateformes est un gain de temps considérable.
