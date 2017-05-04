@@ -13,5 +13,6 @@
 
 ## Problèmes du jour 3:
 
--La musique d'ambiance sur l'application ne s'arrete pas lorsqu'elle est en tâche de fond
--Problème du plugin orientation 
+- La musique d'ambiance sur l'application ne s'arrete pas lorsqu'elle est en tâche de fond
+- Problème du plugin orientation 
+- La geolocalisation fonctionne sur browser mais pas sur device 
