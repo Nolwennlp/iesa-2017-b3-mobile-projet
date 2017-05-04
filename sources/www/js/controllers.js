@@ -2,6 +2,8 @@ angular.module('starter.controllers', [])
 
     .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaDeviceOrientation) {
         $ionicPlatform.ready(function () {
+            StatusBar.show();
+
             var isAndroid = ionic.Platform.is('android');
             $scope.invitePeople=function(){
                 $ionicPopup.alert({
@@ -14,7 +16,7 @@ angular.module('starter.controllers', [])
             var media = null;
 
             $scope.music_one = function(){
-                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/media/mario.mp3";
+                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/js/mario.mp3";
                 media = $cordovaMedia.newMedia(src);
 
                 var iOSplayoption = {
@@ -36,7 +38,7 @@ angular.module('starter.controllers', [])
             };
 
             $scope.music_two = function(){
-                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/media/pokemon.mp3";
+                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/js/pokemon.mp3";
                 media = $cordovaMedia.newMedia(src);
 
                 var iOSplayoption = {
@@ -63,36 +65,14 @@ angular.module('starter.controllers', [])
             $ionicPlatform.on('pause',function(){
                 media.stop();
             })
-
         })
     })
 
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
-        $scope.$on('$ionicView.enter', function() {
-                var isAndroid = ionic.Platform.isAndroid();
-                if (isAndroid) {
-                    $scope.getCallPermission();
-                    $ionicPopup.alert({
-                        title:'testPerm',
-                        template:'android'
-                    });
-
-                }
-                else
-                {
-                    $ionicPopup.alert({
-                        title:'testPermi',
-                        template:'not android'
-                    });
-                }
-        });
-
         $scope.centerOnMe = function () {
             $ionicPlatform.ready(function () {
-                $ionicPopup.alert({
-                    title:'test',
-                    template:'debut'
-                });
+                StatusBar.show();
+
                 var posOptions = {timeout: 10000, enableHighAccuracy: true};
                 $cordovaGeolocation
                     .getCurrentPosition(posOptions)
@@ -102,35 +82,38 @@ angular.module('starter.controllers', [])
                         console.log('latitude : '+lat);
                         console.log('Longitude : '+long);
                         console.log(position);
-                        var myLatlng = new google.maps.LatLng(lat,long);
 
-                        var mapOptions = {
-                            center: myLatlng,
-                            zoom: 17,
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
+                        alert('Latitude :'+ lat +' Longitude : '+long);
 
-                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                        $scope.map = map;
-                        google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-                            var marker = new google.maps.Marker({
-                                position: myLatlng,
-                                title:"Hello World!",
-                                map: $scope.map
-                            });
-                            var infoWindow = new google.maps.InfoWindow({
-                                content: "Here I am!"
-                            });
-                            google.maps.event.addListener(marker, 'click', function () {
-                                infoWindow.open($scope.map, marker);
-                            });
-                        });
-//                        marker.setMap(map);
+                        // var myLatlng = new google.maps.LatLng(lat,long);
+                        //
+                        // var mapOptions = {
+                        //     center: myLatlng,
+                        //     zoom: 17,
+                        //     mapTypeId: google.maps.MapTypeId.ROADMAP
+                        // };
 
-                        $ionicPopup.alert({
-                            title:'fin',
-                            template:'fini'
-                        });
+//                         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+//                         $scope.map = map;
+//                         google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+//                             var marker = new google.maps.Marker({
+//                                 position: myLatlng,
+//                                 title:"Hello World!",
+//                                 map: $scope.map
+//                             });
+//                             var infoWindow = new google.maps.InfoWindow({
+//                                 content: "Here I am!"
+//                             });
+//                             google.maps.event.addListener(marker, 'click', function () {
+//                                 infoWindow.open($scope.map, marker);
+//                             });
+//                         });
+// //                        marker.setMap(map);
+//
+//                         $ionicPopup.alert({
+//                             title:'fin',
+//                             template:'fini'
+//                         });
 
                     }, function(err) {
                         $ionicPopup.alert({
