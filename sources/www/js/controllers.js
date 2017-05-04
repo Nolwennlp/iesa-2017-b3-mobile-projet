@@ -1,47 +1,70 @@
 angular.module('starter.controllers', [])
 
-    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup) {
-        $scope.invitePeople=function(){
-            $ionicPopup.alert({
-                title: 'Contact',
-                template: 'Select someone to share the game with'
-            });
+    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaDeviceOrientation) {
+        $ionicPlatform.ready(function () {
+            var isAndroid = ionic.Platform.is('android');
+            $scope.invitePeople=function(){
+                $ionicPopup.alert({
+                    title: 'Contact',
+                    template: 'Select someone to share the game with'
+                });
+            };
 
-            $scope.getCallPermission = function() {
-                                    cordova.plugins.diagnostic.getPermissionAuthorizationStatus(function(status) {
-                                        switch (status) {
-                                            case cordova.plugins.diagnostic.runtimePermissionStatus.GRANTED:
-                                                break;
-                                            case cordova.plugins.diagnostic.runtimePermissionStatus.NOT_REQUESTED:
-                                                $scope.setPhonePermission();
-                                                break;
-                                            case cordova.plugins.diagnostic.runtimePermissionStatus.DENIED:
-                                                $scope.setPhonePermission();
-                                                break;
-                                            case cordova.plugins.diagnostic.runtimePermissionStatus.DENIED_ALWAYS:
-                                                $scope.setPhonePermission();
-                                                break;
-                                        }
-                                    }, function(error) {}, cordova.plugins.diagnostic.runtimePermission.CALL_PHONE);
-                                };
-                                $scope.setPhonePermission = function() {
-                                            cordova.plugins.diagnostic.requestRuntimePermission(function(status) {
-                                                switch (status) {
-                                                    case cordova.plugins.diagnostic.permissionStatus.GRANTED:
-                                                        break;
-                                                    case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
-                                                        break;
-                                                    case cordova.plugins.diagnostic.permissionStatus.DENIED:
-                                                        break;
-                                                    case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
-                                                        break;
-                                                }
-                                            }, function(error) {}, cordova.plugins.diagnostic.runtimePermission.CALL_PHONE);
-                                        };
+            var src = null;
+            var media = null;
 
-        }
+            $scope.music_one = function(){
+                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/media/mario.mp3";
+                media = $cordovaMedia.newMedia(src);
 
+                var iOSplayoption = {
+                    numberOfLoops: 1,
+                    playAudioWhenScreenIsLocked : false
+                };
 
+                if(isAndroid){
+                    media.play();
+                }
+                else
+                {
+                    media.play(iOSplayoption).then(function () {
+                        alert('played');
+                    }, function(error){
+                        alert(error);
+                    });
+                }
+            };
+
+            $scope.music_two = function(){
+                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/media/pokemon.mp3";
+                media = $cordovaMedia.newMedia(src);
+
+                var iOSplayoption = {
+                    numberOfLoops: 2,
+                    playAudioWhenScreenIsLocked : false
+                };
+
+                if(isAndroid){
+                    media.play();
+                }
+                else{
+                    media.play(iOSplayoption).then(function () {
+                        alert('played');
+                    }, function(error){
+                        alert(error);
+                    });
+                }
+            };
+
+            $scope.stop = function(){
+                media.stop();
+            };
+
+            $ionicPlatform.on('pause',function(){
+                media.stop();
+            })
+
+        })
     })
 
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
@@ -121,27 +144,10 @@ angular.module('starter.controllers', [])
     })
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
-        var isAndroid = ionic.Platform.isAndroid();
-            if (isAndroid) {
-                $ionicPopup.alert({
-                        title:'testPerm',
-                        template:'android'
-                });
-                $scope.getCallPermission();
-            }
-            else
-            {
-                $ionicPopup.alert({
-                    title:'testPermi',
-                    template:'not android'
-                });
-            }
-
         $ionicPlatform.ready(function () {
-            // StatusBar.hide();
+            StatusBar.hide();
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
-                    $scope.consoleContacts = JSON.stringify(allContacts);
                     $scope.contacts = allContacts;
                 }
             );

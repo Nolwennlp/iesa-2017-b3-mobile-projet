@@ -16,3 +16,4 @@
 - La musique d'ambiance sur l'application ne s'arrete pas lorsqu'elle est en tâche de fond
 - Problème du plugin orientation 
 - La geolocalisation fonctionne sur browser mais pas sur device 
+- Perte de code avec git

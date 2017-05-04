@@ -21,6 +21,9 @@
 >>### Nicolas :
 >>La méthode agile permet d'avancer  et de s'orienter efficacement durant la vie du projet. Elle coordonne l'équipe, pointe les problèmes quand ils arrivent, et permet d'y remédier rapidement. L'agilité permet aussi un meilleur suivi, que ce soit du client ou de l'équipe de développement.
 
+>>### Ilyaçe :
+>>Permet de travailler rapidement et efficassement. Elle permet de relever les problemes assez tôt dans le projet pour pouvoir y remedier. Concernant l'équipe elle permet une bonne répartition des tâches et se palier à un imprevu tel que l'absence d'une personne. La méthode agile est un bon allier des débuts rapide et des projets surle cours terme. 
+
 ## Et si nous prenions un exemple concret ? 
 
 Dans l'agilité il ya plusieurs rôles bien déifinis qui permette le bon déroulement du projet. 

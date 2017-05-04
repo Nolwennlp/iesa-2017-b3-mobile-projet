@@ -15,3 +15,6 @@ Si on veut créer une première application mobile c'est pratique.
 
 >### Nicolas
 >Cordova est un outil pratique et complet pour le développement mobile. Développer du code pour deux plateformes est un gain de temps considérable.
+
+>### Ilyaçe
+>Cordova permet de developper sur plusieurs patforms en même temps, ce qui est un avantage considerable. La documentation est plutôt bien faite, et l'installation des plugins est simple.
