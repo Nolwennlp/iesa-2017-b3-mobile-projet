@@ -9,3 +9,9 @@
 - Refresh de l'application ne fonctionne pas bien. Obliger de revenir sur la home et revenir sur l'application pour que le refresh se fasse. 
 
 - Simulateur ne fonctionne pas bien pour Ios. On ne voyait pas les modifications, il a fallu que l'on test sur téléphone.
+
+
+## Problèmes du jour 3:
+
+-La musique d'ambiance sur l'application ne s'arrete pas lorsqu'elle est en tâche de fond
+-Problème du plugin orientation 
