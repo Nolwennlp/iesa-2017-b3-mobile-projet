@@ -145,6 +145,7 @@ angular.module('starter.controllers', [])
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
         $ionicPlatform.ready(function () {
+
             StatusBar.hide();
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
