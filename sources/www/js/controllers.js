@@ -85,35 +85,35 @@ angular.module('starter.controllers', [])
 
                         alert('Latitude :'+ lat +' Longitude : '+long);
 
-                        // var myLatlng = new google.maps.LatLng(lat,long);
-                        //
-                        // var mapOptions = {
-                        //     center: myLatlng,
-                        //     zoom: 17,
-                        //     mapTypeId: google.maps.MapTypeId.ROADMAP
-                        // };
+                        var myLatlng = new google.maps.LatLng(lat,long);
 
-//                         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-//                         $scope.map = map;
-//                         google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-//                             var marker = new google.maps.Marker({
-//                                 position: myLatlng,
-//                                 title:"Hello World!",
-//                                 map: $scope.map
-//                             });
-//                             var infoWindow = new google.maps.InfoWindow({
-//                                 content: "Here I am!"
-//                             });
-//                             google.maps.event.addListener(marker, 'click', function () {
-//                                 infoWindow.open($scope.map, marker);
-//                             });
-//                         });
-// //                        marker.setMap(map);
-//
-//                         $ionicPopup.alert({
-//                             title:'fin',
-//                             template:'fini'
-//                         });
+                        var mapOptions = {
+                            center: myLatlng,
+                            zoom: 17,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        $scope.map = map;
+                        google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                title:"Hello World!",
+                                map: $scope.map
+                            });
+                            var infoWindow = new google.maps.InfoWindow({
+                                content: "Here I am!"
+                            });
+                            google.maps.event.addListener(marker, 'click', function () {
+                                infoWindow.open($scope.map, marker);
+                            });
+                        });
+//                        marker.setMap(map);
+
+                        $ionicPopup.alert({
+                            title:'fin',
+                            template:'fini'
+                        });
 
                     }, function(err) {
                         $ionicPopup.alert({
