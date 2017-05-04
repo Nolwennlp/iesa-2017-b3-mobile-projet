@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
 
-    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia) {
+    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaDeviceOrientation) {
         $ionicPlatform.ready(function () {
+            var isAndroid = ionic.Platform.is('android');
             $scope.invitePeople=function(){
                 $ionicPopup.alert({
                     title: 'Contact',
@@ -17,15 +18,21 @@ angular.module('starter.controllers', [])
                 media = $cordovaMedia.newMedia(src);
 
                 var iOSplayoption = {
-                    numberOfLoops: 2,
+                    numberOfLoops: 1,
                     playAudioWhenScreenIsLocked : false
                 };
 
-                media.play(iOSplayoption).then(function () {
-                    alert('played');
-                }, function(error){
-                    alert(error);
-                });
+                if(isAndroid){
+                    media.play();
+                }
+                else
+                {
+                    media.play(iOSplayoption).then(function () {
+                        alert('played');
+                    }, function(error){
+                        alert(error);
+                    });
+                }
             };
 
             $scope.music_two = function(){
@@ -37,16 +44,26 @@ angular.module('starter.controllers', [])
                     playAudioWhenScreenIsLocked : false
                 };
 
-                media.play(iOSplayoption).then(function () {
-                    alert('played');
-                }, function(error){
-                    alert(error);
-                });
+                if(isAndroid){
+                    media.play();
+                }
+                else{
+                    media.play(iOSplayoption).then(function () {
+                        alert('played');
+                    }, function(error){
+                        alert(error);
+                    });
+                }
             };
 
             $scope.stop = function(){
                 media.stop();
-            }
+            };
+
+            $ionicPlatform.on('pause',function(){
+                media.stop();
+            })
+
         })
     })
 
@@ -131,7 +148,6 @@ angular.module('starter.controllers', [])
             StatusBar.hide();
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
-                    $scope.consoleContacts = JSON.stringify(allContacts);
                     $scope.contacts = allContacts;
                 }
             );
