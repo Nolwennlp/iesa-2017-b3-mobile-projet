@@ -42,12 +42,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
           }
       })
 
-      .state('tab.propose',{
-        url:'/propose',
+      .state('tab.geolocalisation',{
+        url:'/geolocalisation',
           views:{
-            'tab-propose':{
-                templateUrl:'templates/propose.html',
-                // controller:'ProposeCtrl'
+            'tab-geolocalisation':{
+                templateUrl:'templates/geolocalisation.html',
+                controller:'GeoCtrl'
             }
           }
       })
