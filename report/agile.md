@@ -15,6 +15,10 @@
 >>Avec l'agilité nous pouvons travailler de manière plus organiser et avec une meilleurs vison des tâches à réaliser tout au long du projet. Grâce à cette méthode de travail les imprévus ne deviennent plus insurmontable car nous savons comment réagir face à eux, notamment en réflechissant quels sont les priorités du projet jour par jour jusqu'à la livraison. 
 
 
+>>### Nicola : 
+>>Gâce à la méthode agile le travail en équipe est optimiser. Chaque jour un bilan est fait pour savoir ou chaque membre du groupe en est et quels ont été les problèmes rencontrés. Cela permet d'avancer et de juger si l'on abandonne une tâche pour la remplacer ou vérifier qu'il n'y a pas d'autre tâche que l'on peut effectuer lorsque l'on est bloquer par exemple. C'est une méthode d'organisation très intéressante dès lors que l'on trvail en équipe, cela facilite la communication dans l'équipe avec les points dans la journée.
+
+
 ## Et si nous prenions un exemple concret ? 
 
 Dans l'agilité il ya plusieurs rôles bien déifinis qui permette le bon déroulement du projet. 
