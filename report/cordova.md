@@ -6,5 +6,5 @@
 > Cordova est un framework facile d'accès, même pour les novices en matière de code, avec une documentation plutôt complète et claire. De nombreux plugins sont disponibles ce qui permet de faire des applications intéréssantes et enrichies avec de nombreuses fonctionnalités. 
 
 >### Nolwenn : 
->La prise en main de Cordova est facile mais pour un débutant car la documentation est assez claire et complète. 
+>La prise en main de Cordova est facile même pour un débutant car la documentation est assez claire et complète. 
 Si on veut créer une première application mobile c'est pratique.
