@@ -9,6 +9,12 @@
 
 >Pour nous l'agilité est une méthode de travail qui nous permet de mieux nous organiser pour la répartition des tâches et pour la gestion des temps. En effet grâce à elle nous avons une meilleure vision sur les objectifs à réaliser quotidiennement pour qu'au final le projet soit complet et opérationnel à la livraison. L'agilité nous permets également de mieux appréhender les différentes situations que l'on peut rencontrer lors d'un projet et faire face aux imprévus de manière structurée et organisée.
 
+<br />
+
+>>### Nolwenn : 
+>>Avec l'agilité nous pouvons travailler de manière plus organiser et avec une meilleurs vison des tâches à réaliser tout au long du projet. Grâce à cette méthode de travail les imprévus ne deviennent plus insurmontable car nous savons comment réagir face à eux, notamment en réflechissant quels sont les priorités du projet jour par jour jusqu'à la livraison. 
+
+
 ## Et si nous prenions un exemple concret ? 
 
 Dans l'agilité il ya plusieurs rôles bien déifinis qui permette le bon déroulement du projet. 
