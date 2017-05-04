@@ -1,0 +1,23 @@
+<ion-view view-title="Proposer un Schmilbrick">
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-text-wrap">
+                Aidez-nous à nous améliorer et participer à la communauté.
+                Proposez-vos schmilbrick !
+            </div>
+        </div>
+
+        <div class="list card">
+            <div class="item" ng-repeat="item in totalProp">
+                <div class="item">
+                    <h2>{{item.nom}}</h2>
+                    <p>{{item.difficule}}</p>
+                </div>
+
+                <div class="item item-body">
+                    <p>{{item.indice}}</p>
+                </div>
+            </div>
+         </div>
+    </ion-content>
+</ion-view>

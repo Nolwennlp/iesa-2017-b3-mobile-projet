@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 
-    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaDeviceOrientation) {
+    .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaStatusbar) {
         $ionicPlatform.ready(function () {
-            StatusBar.show();
+            $cordovaStatusbar.show();
 
             var isAndroid = ionic.Platform.is('android');
             $scope.invitePeople=function(){
@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
             var media = null;
 
             $scope.music_one = function(){
-                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/js/mario.mp3";
+                src = "js/mario.mp3";
                 media = $cordovaMedia.newMedia(src);
 
                 var iOSplayoption = {
@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
             };
 
             $scope.music_two = function(){
-                src = "/Users/Yun1/mobile/iesa-2017-b3-mobile-projet/sources/www/js/pokemon.mp3";
+                src = "js/pokemon.mp3";
                 media = $cordovaMedia.newMedia(src);
 
                 var iOSplayoption = {
@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
         $scope.centerOnMe = function () {
             $ionicPlatform.ready(function () {
-                StatusBar.show();
+                $cordovaStatusbar.show();
 
                 var posOptions = {timeout: 10000, enableHighAccuracy: true};
                 $cordovaGeolocation
@@ -128,7 +128,7 @@ angular.module('starter.controllers', [])
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
         $ionicPlatform.ready(function () {
-            StatusBar.hide();
+            $cordovaStatusbar.styleHex('#6BF672');
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                     $scope.contacts = allContacts;
@@ -159,6 +159,29 @@ angular.module('starter.controllers', [])
         });
     })
 
+    .controller('ProfilCtrl', function (Joueur, $scope, $cordovaStatusbar) {
+        $cordovaStatusbar.styleHex('#F6DF6B');
+        $scope.joueur = Joueur.all();
+    })
+
+    .controller('ProposeCtrl', function ($scope,$cordovaStatusbar){
+        $cordovaStatusbar.hide();
+        console.log('propose');
+
+        var propositions = firebase.database().ref("propositions");
+        propositions.on('value',function (snap) {
+            $scope.totalProp = [];
+            for( var m in snap.val()){
+                var res = snap.val()[m];
+                console.log(res);
+
+                $scope.totalProp.push(res);
+            }
+            console.log($scope.totalProp);
+        })
+
+    })
+
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -177,9 +200,3 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});

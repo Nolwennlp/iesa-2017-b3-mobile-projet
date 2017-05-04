@@ -1,6 +1,22 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function($cordovaContacts) {
+.factory('Joueur',function () {
+  var joueur = [{
+        id:0,
+        name:'Team Abadir',
+        score:'700',
+      association_name:'Coexister',
+      association_img:'img/association/coexister.jpg'
+    }];
+
+  return {
+    all:function () {
+        return joueur;
+    }
+  }
+})
+
+.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data

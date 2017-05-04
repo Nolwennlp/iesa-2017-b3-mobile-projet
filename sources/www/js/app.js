@@ -32,6 +32,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   // Each state's controller can be found in controllers.js
   $stateProvider
   // setup an abstract state for the tabs directive
+      .state('tab.propose',{
+        url:'/propose',
+          views:{
+            'tab-propose':{
+                templateUrl:'templates/propose.html',
+                controller:'ProposeCtrl'
+            }
+          }
+      })
+
+      .state('tab.profil',{
+        url:'/profil',
+          views:{
+          'tab-profil':{
+            templateUrl:'templates/profil.html',
+              controller:'ProfilCtrl'
+          }
+          }
+      })
+
       .state('tab.invite',{
         url:'/invite',
           views:{
