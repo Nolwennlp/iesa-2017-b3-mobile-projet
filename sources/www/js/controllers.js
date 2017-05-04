@@ -138,7 +138,7 @@ angular.module('starter.controllers', [])
             }
 
         $ionicPlatform.ready(function () {
-            StatusBar.hide();
+            // StatusBar.hide();
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                     $scope.consoleContacts = JSON.stringify(allContacts);
@@ -161,7 +161,7 @@ angular.module('starter.controllers', [])
 
                 alert("voici le contenu: "+content);
 
-                sms.send(phoneNumber, content, options).then(function () {
+                $cordovaSms.send(phoneNumber, content, options).then(function () {
                     alert('Votre message a été envoyé!');
                 }, function(error){
                     alert(error);
