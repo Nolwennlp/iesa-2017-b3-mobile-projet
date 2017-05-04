@@ -13,3 +13,5 @@ Si on veut créer une première application mobile c'est pratique.
 >### Nicola : 
 >Je n'avais jamais créé d'application mobile avant cela, je trouve le framework très intéressant de par sa facilité de prise en main avant tout mais aussi par sa complexité il offre un grand nombre de plugin. Grâce à cela l'outil cordova nous permet d'apréhender plus facilement la création d'une première application mobile.
 
+>### Nicolas
+>Cordova est un outil pratique et complet pour le développement mobile. Développer du code pour deux plateformes est un gain de temps considérable.
