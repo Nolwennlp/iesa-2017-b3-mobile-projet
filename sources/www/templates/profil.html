@@ -1,0 +1,21 @@
+<ion-view view-title="Profil">
+    <ion-content class="padding">
+        <div class="list card" ng-repeat="j in joueur">
+
+            <div class="item item-avatar">
+                <img src="img/adam.jpg">
+                <h2 style="font-weight: 700; text-transform: uppercase">{{j.name}}</h2>
+                <p>{{j.score}}</p>
+            </div>
+
+            <div class="item item-image">
+                <img src="{{j.association_img}}">
+            </div>
+
+            <p class="item item-icon-left assertive">
+                <i class="icon ion-ios-information"></i>
+               {{j.association_name}}
+            </p>
+        </div>
+    </ion-content>
+</ion-view>
