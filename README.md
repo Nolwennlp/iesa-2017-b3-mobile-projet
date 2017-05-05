@@ -26,6 +26,7 @@ https://drive.google.com/open?id=1mURPOJxYddpziutYhKDJdoa_UfMJlAQGxe8ERqtd6OQ
 
 ## Installation du projet 
 
+ Avant tout faire la commande : npm install (cela installera toutes les dépendances pour le projet)
 
 1- Installation de cordova sur Windows
 
