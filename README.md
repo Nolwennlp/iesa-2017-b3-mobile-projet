@@ -19,6 +19,10 @@ https://drive.google.com/file/d/0B-zKKJKRS3E3S0ZRUzU2dHA2LU0/view?usp=sharing
 https://drive.google.com/drive/u/0/folders/0B2Sq6hsLJ5g9MXFPU2lHSkV3aFk
 
 
+## Lien Slide 
+
+https://drive.google.com/open?id=1mURPOJxYddpziutYhKDJdoa_UfMJlAQGxe8ERqtd6OQ
+
 
 ## Installation du projet 
 
