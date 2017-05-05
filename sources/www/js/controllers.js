@@ -130,6 +130,7 @@ angular.module('starter.controllers', [])
         $ionicPlatform.ready(function () {
             $cordovaStatusbar.styleHex('#6BF672');
 
+
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                     $scope.contacts = allContacts;
                 }

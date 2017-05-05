@@ -1,21 +1,9 @@
-## Splashscreen
-- AS A : developpeur
-- I WANT: Un splashscreen personnalisé pour le jeu
-- SO THAT: le lancement du jeu est indiqué
+## SPLASHSCREEN
 
-## Contact
-- AS A: joueur
-- I WANT: Inviter des gens au jeu
-- SO THAT: Je peux joueur avec mes amis
-- On suggère d'afficher la liste des amis dans le profil du joueur.
+_Mettre en place un écran de lancement_
 
-## Camera
-- AS A: joueur
-- I WANT: prendre une photo
-- SO THAT: Je peux personnalisé mon avatar
-- Est-ce qu'on peut permettre aux gens de proposer leurs propres images à découvrir ? 
+**AS A :** Henry, 28 ans, toujours à la recherche de nouveaux jeux originaux. <br />
+**I WANT :** Un splashscreen personnalisé pour le jeu. <br />
+**SO THAT :** Le lancement du jeu est indiqué au joueur. 
 
-## Geoloc’
-- AS A: joueur
-- I WANT: me geolocalisé
-- SO THAT: je peux afficher de quel pays je joue
+

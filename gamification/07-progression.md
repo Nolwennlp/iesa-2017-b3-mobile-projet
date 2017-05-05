@@ -1,2 +1,0 @@
-- Animation javascript quand il gagne des niveaux et des points.
-- Les questions se compliquent en fonction du niveau.

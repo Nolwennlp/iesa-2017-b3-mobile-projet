@@ -1,0 +1,3 @@
+- Les bonnes réponses donnent des points qui serviront de devises. 
+- Des quêtes journalières pour pousser l’utilisateur à revenir.
+- Des défis à réaliser sur le long terme 

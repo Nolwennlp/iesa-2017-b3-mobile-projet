@@ -1,1 +1,0 @@
-- Envoyer un cadeau au hasard à des amis ( indices / points / bonus de temps )

@@ -1,3 +1,0 @@
-- système de points -> lorsque l’utilisateur répond correctement il gagne des points → augmente de niveau 
-- Si il répond bon deux fois d'affilée on lui double les points 
-- Jauge de progression de point ( couleurs ) 

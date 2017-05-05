@@ -1,0 +1,3 @@
+- Pouvoir dépenser les trophées (sans perdre la globalité des trophées gagné pour le classement).
+- Argent provenant des achats intégrés de l’application sont en partie reversés à l’association choisie au début.
+- Pouvoir personnaliser son avatar grâce à des achats dans le “shop”.
