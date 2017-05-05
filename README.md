@@ -70,3 +70,8 @@ cordova plugin add cordova-plugin-device-orientation
 - 3.7-Sms
 
 cordova plugin add cordova-sms-plugin
+
+- 3.8 Media
+
+cordova plugin add cordova-plugin-media
+
