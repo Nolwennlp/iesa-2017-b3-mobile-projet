@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
     .controller('DashCtrl', function($scope, $cordovaContacts, $ionicPlatform, $ionicPopup, $cordovaMedia, $cordovaStatusbar) {
         $ionicPlatform.ready(function () {
-            $cordovaStatusbar.show();
+            // $cordovaStatusbar.show();
 
             var isAndroid = ionic.Platform.is('android');
             $scope.invitePeople=function(){
@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
     .controller('GeoCtrl',function($scope, $cordovaGeolocation, $ionicPopup, $ionicPlatform){
         $scope.centerOnMe = function () {
             $ionicPlatform.ready(function () {
-                $cordovaStatusbar.show();
+                // $cordovaStatusbar.show();
 
                 var posOptions = {timeout: 10000, enableHighAccuracy: true};
                 $cordovaGeolocation
@@ -128,7 +128,7 @@ angular.module('starter.controllers', [])
 
     .controller('InviteCtrl',function ($scope, $cordovaContacts, $cordovaSms, $ionicPopup, $cordovaStatusbar, $ionicPlatform) {
         $ionicPlatform.ready(function () {
-            $cordovaStatusbar.styleHex('#6BF672');
+            // $cordovaStatusbar.styleHex('#6BF672');
 
             $cordovaContacts.find({multiple:true}).then(function(allContacts) {
                     $scope.contacts = allContacts;
@@ -160,12 +160,12 @@ angular.module('starter.controllers', [])
     })
 
     .controller('ProfilCtrl', function (Joueur, $scope, $cordovaStatusbar) {
-        $cordovaStatusbar.styleHex('#F6DF6B');
+        // $cordovaStatusbar.styleHex('#F6DF6B');
         $scope.joueur = Joueur.all();
     })
 
-    .controller('ProposeCtrl', function ($scope,$cordovaStatusbar){
-        $cordovaStatusbar.hide();
+    .controller('SuggestCtrl', function ($scope,$cordovaStatusbar){
+        // $cordovaStatusbar.hide();
         console.log('propose');
 
         var propositions = firebase.database().ref("propositions");
