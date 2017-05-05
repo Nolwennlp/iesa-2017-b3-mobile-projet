@@ -166,7 +166,7 @@ angular.module('starter.controllers', [])
 
     .controller('SuggestCtrl', function ($scope,$cordovaStatusbar){
         // $cordovaStatusbar.hide();
-        console.log('propose');
+        alert('propose');
 
         var propositions = firebase.database().ref("propositions");
         propositions.on('value',function (snap) {
