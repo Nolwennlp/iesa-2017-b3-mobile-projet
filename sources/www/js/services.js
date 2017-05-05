@@ -3,7 +3,7 @@ angular.module('starter.services', [])
 .factory('Joueur',function () {
   var joueur = [{
         id:0,
-        name:'Team Abadir',
+        name:'azert',
         score:'700',
       association_name:'Coexister',
       association_img:'img/association/coexister.jpg'
