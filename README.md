@@ -1,9 +1,5 @@
 # ABADIR
 
-## Fichiers maqnautans fin J3
-
-- AUCUN.
-
 ### Membres de l'équipe:
 - Nolwenn Le Padellec
 - Ilyaçe Regaibi
