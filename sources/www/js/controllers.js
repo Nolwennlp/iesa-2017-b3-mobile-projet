@@ -147,7 +147,7 @@ angular.module('starter.controllers', [])
                     }
                 };
 
-                var content = 'Salut '+name+' ! Rejoins l\'aventure et aide-moi à résoudre le Schmilblick !';
+                var content = 'Hey '+name+'.Bien ou quoi mon petit Lapinos ! Rejoins moi sur le Schmilbrick.';
 
                 alert("voici le contenu: "+content);
 
