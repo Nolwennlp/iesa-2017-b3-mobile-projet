@@ -30,5 +30,7 @@ Dans l'agilité il ya plusieurs rôles bien déifinis qui permette le bon dérou
 Nous pourrions comparer le chef de projet à un chien. Plus précisément à un chien de berger, celui qui veille à ce que le troupeau ne se détourne pas de son objectif/ de sa route. 
 Le chien de berger ne fait pas qu'être ferme envers son troupeau. Tout comme le chef de projet, il sait encourager son troupeau/équipe. Au final ceci permet à son troupeau d'être autonome tout au long de la route/projet. 
 
+Le chien de berger / le chef de projet peut parfois être diverti / dévié / perturbé de ses fonctions via des éléments extérieurs. Prenons pour exemple une balle de tennis qui se trouve sur le chemin alors que le chien est en train de guider le troupeau. Cet élément peut perturber l’attention du chien sur le troupeau et donc baisser l'efficacité du travail du chien. 
+
 ![Chien](https://www.forumfr.com/applications/core/interface/imageproxy/imageproxy.php?img=http://www.le-clos-du-pendays.com/images/voks_troupeaux.jpg&key=1c683737e022748bb2a30b85894a5ff52dba2a924b2bf747b9a5ac77a0de4928)
 
